@@ -62,7 +62,16 @@ Ahora guardan el Gemfile. Si están en el labcomp están listos, si están en su
 Dentro de la carpeta del proyecto (si ven un patrón: todo se hace desde dentro de esta carpeta)
 ejecutan `rails server` con lo que se ejecutará el servidor integrado que tiene rails.
 
-Aparecerá un texto en la consola, y después de unos momentos (unos 30 segundos aproximadamente)
+Cuando aparezca este texto en la consola
+
+    => Booting WEBrick
+		=> Rails 3.2.2 application starting in development on http://0.0.0.0:3000
+		=> Call with -d to detach
+		=> Ctrl-C to shutdown server
+		[2012-06-08 00:27:12] INFO  WEBrick 1.3.1
+		[2012-06-08 00:27:12] INFO  ruby 1.9.2 (2011-07-09) [i386-mingw32]
+		[2012-06-08 00:27:12] INFO  WEBrick::HTTPServer#start: pid=4564 port=3000
+
 podrán acceder a su aplicación entrando a <http://localhost:3000> si es que todo ha salido bien.
 
 Si no les abre la página: hicieron algo mal.
