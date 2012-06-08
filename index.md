@@ -5,4 +5,4 @@ description: ""
 ---
 {% include JB/setup %}
 
-[Guía de inicio de Rails](/rails)
+[Guía de inicio de Rails](/rails/bd-quickstart)
