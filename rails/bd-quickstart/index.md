@@ -51,6 +51,8 @@ trabajar en el labcomp).
 **Deben** abrir este archivo y descomentar la línea `#gem 'therubyracer', :platforms => :ruby'` o
 **no les funcionará la aplicación en el labcomp**.
 
+*Pueden encontrar un Gemfile de ejemplo (que les debería bastar para esta tarea) en el siguiente gist: <https://gist.github.com/2893387>*
+
 Ahora guardan el Gemfile. Si están en el labcomp están listos, si están en su casa deben correr
 `bundle install` cada vez que editan el gemfile (de nuevo: en el labcomp **no** deben correr
 `bundle install`, fallará, no se necesita para que funcionen las gemas).
