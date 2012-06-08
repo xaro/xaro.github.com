@@ -34,6 +34,29 @@ un par de pasos que no agregué acá).
 
 Además, deben instalar *sqlite3* (usen su administrador de paquetes preferido).
 
+Comenzando con Git
+-------------------
+Para comenzar su tarea, primero deben iniciar su repositorio git. Esto lo hacen haciendo un push inicial, lo
+que además dejará el repositorio funcionando en tu pc local, listo para comenzar a trabajar felizmente.
+
+Para iniciar el repo hacen
+<pre>
+$ mkdir bdxx-2012-1
+$ cd bdxx-2012-1
+$ git init
+$ git remote add origin git@git.inf.utfsm.cl:bdxx-2012-1
+$ echo "init" > INIT
+$ git add -f INIT
+$ git commit -a -m "Initial Commit"
+$ git push origin master:refs/heads/master
+</pre>
+
+Con esto tendrán el repositorio funcionando en el labcomp.
+
+Deben hacer lo anterior una sola vez (la primera vez que usan el repo). Para que los otros integrantes del grupo
+comiencen a trabajar, basta con hacer `git clone git@git.inf.utfsm.cl:bdxx-2012-1` y recibirán el repositorio con
+todo lo que se le haya agregado.
+
 Mi Primera Aplicación Rails
 ---------------------------
 
@@ -81,5 +104,14 @@ podrán acceder a su aplicación entrando a <http://localhost:3000> si es que to
 
 Si no les abre la página: hicieron algo mal.
 
-Git
----
+Más sobre Git
+-------------
+Ahora que ya tienen su aplicación funcionando (aunque haga nada), deben agregar los archivos al repositorio
+y mandarlos al repo del labcomp.
+
+Para esto, deben primero añadir los archivos con `git add .` desde la carpeta de la aplicación. Luego hacen
+`git commit -m 'mensaje del commit'` para enviar los cambios hacia su repositorio local.
+
+Finalmente, con un `git push origin` envían los cambios al repositorio del labcomp.
+
+Con esto ya tienen listo para la primera entrega.
