@@ -29,6 +29,9 @@ las instrucciones en el sitio, no hay por donde perderse, pero cualquier duda la
 
 *RVM* debería venir con *RubyGems*, así que para instalar rails simplemente deben hacer `gem install rails`.
 
+Instrucciones más específicas vean <http://blog.jam.net.ve/2011/05/17/instalando-rvm-ruby-rails-en-ubuntu/> (faltan
+un par de pasos que no agregué acá).
+
 Además, deben instalar *sqlite3* (usen su administrador de paquetes preferido).
 
 Mi Primera Aplicación Rails
