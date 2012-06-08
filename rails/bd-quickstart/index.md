@@ -115,3 +115,5 @@ Para esto, deben primero añadir los archivos con `git add .` desde la carpeta d
 Finalmente, con un `git push origin` envían los cambios al repositorio del labcomp.
 
 Con esto ya tienen listo para la primera entrega.
+
+[http://labcomp.inf.utfsm.cl/servicios/git](Más información de git en el labcomp)
