@@ -14,28 +14,28 @@ labcomp donde todo está instalado. Si prefieren trabajar también desde sus cas
 
 ### Windows
 Descargar [http://railsinstaller.org/](RailsInstaller) (la última versión), éste les
-instalará todo lo necesario para comenzar su tarea, incluso `git`, así que con esto
+instalará todo lo necesario para comenzar su tarea, incluso *git*, así que con esto
 están listos.
 
 *Nota: al momento de escribir esto RailsInstaller está caída, bajen desde* <http://rubyforge.org/frs/download.php/75894/railsinstaller-2.1.0.exe> *el instalador.*
 
 Para las siguientes secciones, los comandos son iguales tanto para Linux como para Windows,
 pero ojo que la consola que deben abrir es la que que viene con Rails Installer (está en
-su menú de inicio, es `cmd` scoped a rails).
+su menú de inicio, es *cmd* scoped a rails).
 
 ### Linux
 Para Linux son un par de pasos más, primero instalen [https://rvm.io/rvm/install/](RVM) (están todas
 las instrucciones en el sitio, no hay por donde perderse, pero cualquier duda la preguntan).
 
-`RVM` debería venir con `RubyGems`, así que para instalar rails simplemente deben hacer `gem install rails`.
+*RVM* debería venir con *RubyGems*, así que para instalar rails simplemente deben hacer `gem install rails`.
 
-Además, deben instalar `sqlite3` (usen su administrador de paquetes preferido).
+Además, deben instalar *sqlite3* (usen su administrador de paquetes preferido).
 
 Mi Primera Aplicación Rails
 ---------------------------
 
 Para crear su proyecto Rails, basta con buscar una carpeta en la cual van a trabajar
-y escribir `rails new nombre_proyecto` donde `nombre_proyecto` es el nombre de su proyecto (duh).
+y escribir `rails new nombre_proyecto` donde *nombre_proyecto* es el nombre de su proyecto (duh).
 
 *Nota: Si hacen esto desde el labcomp, deben interrumpir el proceso de creación una vez que llegue 
 a `run  bundle install` por motivos de como se instalaron las cosas allá.*
