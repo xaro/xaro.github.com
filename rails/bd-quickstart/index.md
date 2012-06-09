@@ -5,6 +5,14 @@ description: ""
 ---
 {% include JB/setup %}
 
+Lo Necesario
+------------
+Para esta tarea, necesitarán tener las siguientes herramientas instaladas:
+* Ruby (1.9.3)
+* Rails (3.2)
+* Sqlite3
+* [Git](http://git-scm.com/)
+
 Instalación de Rails
 --------------------
 
@@ -36,10 +44,30 @@ Además, deben instalar *sqlite3* (usen su administrador de paquetes preferido).
 
 Comenzando con Git
 -------------------
-Para comenzar su tarea, primero deben iniciar su repositorio git. Esto lo hacen haciendo un push inicial, lo
+Para comenzar su tarea, primero deben iniciar su repositorio git. 
+
+### Agregar su llave SSH
+Se les pidió que crearan una llave SSH en el labcomp. Este proceso generó dos archivos: `id_rsa` y `id_rsa.pub`.
+La que nos interesa ahora es `id_rsa`, su llave privada. Esta debería estar en su cuenta de labcomp, en la carpeta
+`~/.ssh/`. Deben copiarla (ojo: **no borrarla**) desde esa carpeta hacia su computador personal, donde deben guardarla
+en la carpeta `~/.ssh/` si están en linux, y `C:\Users\<usuario>\.ssh\` si están en windows.
+
+### Instalando Git
+Los usuarios de linux debiesen tener git ya instalado y usarlo sin problemas (saltar a siguiente sección).
+
+Para nuestros amigos de windows, deben descargar [git](http://git-scm.com/) e instalarlo. También de paso
+pueden instalar una de sus [interfaces gráficas](http://git-scm.com/downloads/guis) si es que les acomoda más.
+Una vez instalado, deben realizar todos los siguientes comandos abriendo la consola que se instaló (la encuentran
+en su menú de inicio como *Git Bash*).
+
+### Inicializando su Repo
+Este paso lo deben hace **una sola vez**, cuando recién comienzan con el repo. Lo debe hace *sólo* un integrante
+del grupo, los demás ocupen la siguiente sección.
+
+La inicialización la hacen realizando un push inicial, lo
 que además dejará el repositorio funcionando en tu pc local, listo para comenzar a trabajar felizmente.
 
-Para iniciar el repo hacen
+Para esto, deben ejecutar los comandos (dentro de la carpeta donde trabajarán):
 <pre>
 $ mkdir bdxx-2012-1
 $ cd bdxx-2012-1
@@ -51,11 +79,15 @@ $ git commit -a -m "Initial Commit"
 $ git push origin master:refs/heads/master
 </pre>
 
-Con esto tendrán el repositorio funcionando en el labcomp.
+Con esto tendrán el repositorio funcionando en el labcomp y con una copia personal en sus pc.
 
-Deben hacer lo anterior una sola vez (la primera vez que usan el repo). Para que los otros integrantes del grupo
-comiencen a trabajar, basta con hacer `git clone git@git.inf.utfsm.cl:bdxx-2012-1` y recibirán el repositorio con
-todo lo que se le haya agregado.
+### Clonando el repositorio
+Una vez que ya ha sido inicializado el repositorio, si queremos bajarlo desde otro computador (por ejemplo,
+lo inicializaron en sus casas y lo quieren utilizar en el labcomp, o lo inicializó otro compañero de grupo)
+se debe hacer un `git clone git@git.inf.utfsm.cl:bdxx-2012-1` desde la carpeta
+donde quieran trabajar, y recibirán el repositorio con todo lo que se le haya agregado anteriormente.
+
+*Se continuará con la explicación de git en secciones siguientes.*
 
 Mi Primera Aplicación Rails
 ---------------------------
