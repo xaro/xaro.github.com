@@ -148,4 +148,4 @@ Finalmente, con un `git push origin` envían los cambios al repositorio del labc
 
 Con esto ya tienen listo para la primera entrega.
 
-[http://labcomp.inf.utfsm.cl/servicios/git](Más información de git en el labcomp)
+[http://labcomp.inf.utfsm.cl/servicios/git]( Más información de git en el labcomp)
