@@ -52,14 +52,6 @@ La que nos interesa ahora es `id_rsa`, su llave privada. Esta debería estar en 
 `~/.ssh/`. Deben copiarla (ojo: **no borrarla**) desde esa carpeta hacia su computador personal, donde deben guardarla
 en la carpeta `~/.ssh/` si están en linux, y `C:\Users\<usuario>\.ssh\` si están en windows.
 
-### Instalando Git
-Los usuarios de linux debiesen tener git ya instalado y usarlo sin problemas (saltar a siguiente sección).
-
-Para nuestros amigos de windows, deben descargar [git](http://git-scm.com/) e instalarlo. También de paso
-pueden instalar una de sus [interfaces gráficas](http://git-scm.com/downloads/guis) si es que les acomoda más.
-Una vez instalado, deben realizar todos los siguientes comandos abriendo la consola que se instaló (la encuentran
-en su menú de inicio como *Git Bash*).
-
 ### Inicializando su Repo
 Este paso lo deben hace **una sola vez**, cuando recién comienzan con el repo. Lo debe hace *sólo* un integrante
 del grupo, los demás ocupen la siguiente sección.
@@ -145,6 +137,9 @@ Para esto, deben primero añadir los archivos con `git add .` desde la carpeta d
 `git commit -m 'mensaje del commit'` para enviar los cambios hacia su repositorio local.
 
 Finalmente, con un `git push origin` envían los cambios al repositorio del labcomp.
+
+**Además: cada integrante del grupo debe hacer `git clone git@git.inf.utfsm.cl:bdxx-2012-1`g para asegurarse q
+ue todas las cuentas están correctas.**
 
 Con esto ya tienen listo para la primera entrega.
 
