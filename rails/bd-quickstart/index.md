@@ -147,4 +147,4 @@ Con esto ya tienen listo para la primera entrega.
 
 Links Útiles
 ------------
-Primero: [http://tryruby.org](TryRuby.org) Aprender Ruby
+Primero: <http://tryruby.org> TryRuby.org  aprender Ruby
