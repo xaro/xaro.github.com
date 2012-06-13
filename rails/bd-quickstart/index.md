@@ -93,7 +93,7 @@ Mi Primera Aplicación Rails
 ---------------------------
 
 Para crear su proyecto Rails, basta con buscar una carpeta en la cual van a trabajar
-y escribir `rails new nombre_proyecto` donde *nombre_proyecto* es el nombre de su proyecto (duh).
+y escribir `rails new bdxx-2012-1` 
 
 *Nota: Si hacen esto desde el labcomp, deben interrumpir el proceso de creación una vez que llegue 
 a `run  bundle install` por motivos de como se instalaron las cosas allá.*
