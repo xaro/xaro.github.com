@@ -148,3 +148,5 @@ Con esto ya tienen listo para la primera entrega.
 Links Útiles
 ------------
 Primero: <http://tryruby.org> TryRuby.org  aprender Ruby
+
+Primeros pasos con Devise: <https://github.com/plataformatec/devise#getting-started>
