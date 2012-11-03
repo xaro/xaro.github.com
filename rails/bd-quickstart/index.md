@@ -5,14 +5,6 @@ description: ""
 ---
 {% include JB/setup %}
 
-Lo Necesario
-------------
-Para esta tarea, necesitarán tener las siguientes herramientas instaladas:
-* Ruby (1.9.3)
-* Rails (3.2)
-* Sqlite3
-* [Git](http://git-scm.com/)
-
 Instalación de Rails
 --------------------
 
@@ -42,55 +34,14 @@ un par de pasos que no agregué acá).
 
 Además, deben instalar *sqlite3* (usen su administrador de paquetes preferido).
 
-Comenzando con Git
--------------------
-Para comenzar su tarea, primero deben iniciar su repositorio git. 
-
-### Agregar su llave SSH
-Se les pidió que crearan una llave SSH en el labcomp. Este proceso generó dos archivos: `id_rsa` y `id_rsa.pub`.
-La que nos interesa ahora es `id_rsa`, su llave privada. Esta debería estar en su cuenta de labcomp, en la carpeta
-`~/.ssh/`. Deben copiarla (ojo: **no borrarla**) desde esa carpeta hacia su computador personal, donde deben guardarla
-en la carpeta `~/.ssh/` si están en linux, y `C:\Users\<usuario>\.ssh\` si están en windows.
-
-### Inicializando su Repo
-Este paso lo deben hace **una sola vez**, cuando recién comienzan con el repo. Lo debe hace *sólo* un integrante
-del grupo, los demás ocupen la siguiente sección.
-
-La inicialización la hacen realizando un push inicial, lo
-que además dejará el repositorio funcionando en tu pc local, listo para comenzar a trabajar felizmente.
-
-Para esto, deben ejecutar los comandos (dentro de la carpeta donde trabajarán):
-<pre>
-$ mkdir bdxx-2012-1
-$ cd bdxx-2012-1
-$ git init
-$ git remote add origin git@git.inf.utfsm.cl:bdxx-2012-1
-$ echo "init" > INIT
-$ git add -f INIT
-$ git commit -a -m "Initial Commit"
-$ git push origin master:refs/heads/master
-</pre>
-
-Con esto tendrán el repositorio funcionando en el labcomp y con una copia personal en sus pc.
-
-### Clonando el repositorio
-Una vez que ya ha sido inicializado el repositorio, si queremos bajarlo desde otro computador (por ejemplo,
-lo inicializaron en sus casas y lo quieren utilizar en el labcomp, o lo inicializó otro compañero de grupo)
-se debe hacer un `git clone git@git.inf.utfsm.cl:bdxx-2012-1` desde la carpeta
-donde quieran trabajar, y recibirán el repositorio con todo lo que se le haya agregado anteriormente.
-
-*Se continuará con la explicación de git en secciones siguientes.*
 
 Mi Primera Aplicación Rails
 ---------------------------
 
 Para crear su proyecto Rails, basta con buscar una carpeta en la cual van a trabajar
-y escribir `rails new bdxx-2012-1` 
+y escribir `rails new bdxx-2012-1`
 
-*Nota: Si hacen esto desde el labcomp, deben interrumpir el proceso de creación una vez que llegue 
-a `run  bundle install` por motivos de como se instalaron las cosas allá.*
-
-Se creará una carpeta con el nombre que pusieron, que será la aplicación Rails en sí (todo lo que
+Se creará una carpeta con el nombre que pusieron, que será la aplicación Rails en si (todo lo que
 hagan será desde esta carpeta).
 
 ### Editando el Gemfile
@@ -99,13 +50,10 @@ Ustedes podrán usar algunas gemas definidas por motivos de la instalación en e
 trabajar en el labcomp).
 
 **Deben** abrir este archivo y descomentar la línea `#gem 'therubyracer', :platforms => :ruby'` o
-**no les funcionará la aplicación en el labcomp**.
+**no les funcionará la aplicación en el labcomp o en su máquina linux**.
 
-*Pueden encontrar un Gemfile de ejemplo (que les debería bastar para esta tarea) en el siguiente gist: <https://gist.github.com/2893387>*
-
-Ahora guardan el Gemfile. Si están en el labcomp están listos, si están en su casa deben correr
-`bundle install` cada vez que editan el gemfile (de nuevo: en el labcomp **no** deben correr
-`bundle install`, fallará, no se necesita para que funcionen las gemas).
+Ahora guardan el Gemfile. Deben correr
+`bundle install` cada vez que editan el gemfile.
 
 ### Probando que todo funciona y no explota
 
@@ -128,22 +76,42 @@ podrán acceder a su aplicación entrando a <http://localhost:3000> si es que to
 
 Si no les abre la página: hicieron algo mal.
 
-Más sobre Git
--------------
-Ahora que ya tienen su aplicación funcionando (aunque haga nada), deben agregar los archivos al repositorio
-y mandarlos al repo del labcomp.
+**Nota: En el labcomp puede que les salga un error, prueben con `rails server -p 3001` u otro número. Esto es porque alguien puede estar ocupando el puerto 3000, así que después entran a ver su página a <http://localhost:3001>.**
 
-Para esto, deben primero añadir los archivos con `git add .` desde la carpeta de la aplicación. Luego hacen
-`git commit -m 'mensaje del commit'` para enviar los cambios hacia su repositorio local.
+Devise
+------
+El siguiente paso es instalar devise (<https://github.com/plataformatec/devise>).
 
-Finalmente, con un `git push origin` envían los cambios al repositorio del labcomp.
+Deben primero agregar `gem 'devise'` al final de su Gemfile y ejecutar `bundle install`.
 
-**Además: cada integrante del grupo debe hacer `git clone git@git.inf.utfsm.cl:bdxx-2012-1`g para asegurarse q
-ue todas las cuentas están correctas.**
+Luego, correr el instalador de devise con `rails generate devise:install`.
 
-Con esto ya tienen listo para la primera entrega.
+Con eso ya están listos para crear su modelo de usuario con `rails generate devise User`, lo que les creará un modelo de usuario listo para registrarse
+y loguearse. Si quieren que tenga otros atributos como nombre o apellidos basta listarlos en el generador: `rails generate devise User name:string last_name:string atributo:tipo`.
 
-[http://labcomp.inf.utfsm.cl/servicios/git](Más información de git en el labcomp)
+Después, haciendo un `rake db:migrate` guardarán los cambios en la base de datos.
+
+Para comprobar que todo salió correctamente, corren el servidor (al instalar una gema deben reiniciar el servidor), y entrando a <http://localhost:3000/users/sign_in> les debería salir la ventana para loguearse con el link para registrarse.
+
+Para poder editar las vistas, hay que hacer `rails generate devise:views` y se generarán los archivos de vistas en su carpeta `app/views/devise`. La carpeta `sessions` contiene la ventana de login, y la `registrations` la de registro.
+
+Consejos para siguientes requerimientos
+---------------------------------------
+Para comprobar que un usuario está logueado pueden user el método
+`user_signed_in?` que devuelve `true` si el usuario está loguead.
+
+El usuario actual lo pueden obtener con `current_user` que retorna al
+usuario logueado (lo pueden usar en controladores y vistas). Así que
+para probar si un usuario `@user` es el mismo que está logueado basta con
+`@user == current_user`.
+
+Para la paginación se recomienda kaminari. Buen tutorial en <http://railscasts.com/episodes/254-pagination-with-kaminari>
+
+Para los formularios se recomienda usar simple_form (<http://railscasts.com/episodes/234-simple-form>), les facilitará *mucho* el trabajo de seleccionar múltiples categorías para un post utilizando `f.association` (ver video de rails cast, ahí sale un ejemplo que incluso trata de categorías).
+
+Para obtener los posts de un usuario basta con `@user.posts`, lo que retornará un arreglo de posts (que pueden recorrer con `@user.posts.each do |post|`). Para obtener el usuario de un post se usa `@post.user`. Por lo que si quiero el correo del usuario que hizo un post se obtiene con `@post.user.email`.
+
+Para que lo anterior funcione, se tienen que haber hecho correctamente las relaciones en los modelos de cada clase. En `user.rb` debería haber una línea que diga `has_many :posts` y en `post.rb` debe existir `belongs_to :user`.
 
 Links Útiles
 ------------
